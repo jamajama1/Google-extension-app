@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html id="mainWindow">
+  <style>
+	#mainWindow{
+		width: 275px;
+		height: 325px;
+	}
+
+	.mode {
+		border: 1px solid black;
+		background-color: #A4A4A4;
+		float: left;
+		vertical-align: top;
+		font-size: 20px;
+	}
+	
+	div.points {
+		position: fixed;
+  		bottom: 0;
+  		right: 0;
+  		width: 100px;
+	}
+	
+	div.Timer{
+		position: fixed;
+  		bottom: 0;
+  		left: 0;
+  		width: 100px;
+	}
+
+  </style>
+  <body>
+	<!-- Info Relatated to Tabs(Modes) -->
+	<div id="modes">
+		<button class="mode" id="default">Child Mode</button>
+		<button class="mode" id="Admin">Admin Mode</button>
+	</div>
+	
+	<!-- Info Related to buttons in Child Mode Tab -->
+	<div id="Child Mode">
+		<button id="view">View</button>
+		<button id="educational_game">Educational Game</button>
+		<button  id="context_clue_game">Context Clue Game</button>
+		<a href = "./manuals/child_manual.pdf" target="_blank">User Manual</a>
+	
+	</div>
+	
+	<!-- Info Related to Admin Mode Tab -->
+	<div id="Admin Mode">
+		<button id ="Admin Options">Admin Options</button>
+		<button id = "Add Points">Add Points</button>
+		<a href = "./manuals/parent_manual.pdf" target="_blank">User Manual</a>
+	
+  </div>
+	
+	<!-- Info Related to Point Display -->
+	<div id = "points" class = "points">
+	<h1 style = "font-size:100%"> |Points| </h1>
+	<p id = "pointTotal">0</p>
+	</div>
+
+
+	<!-- Info Related to Timer -->
+	<div id = "Timer" class = "Timer">
+		<h1 style = "font-size:100%"> |Timer| </h1>
+		<p id = "extime"></p>
+		<p id = "time"></p>
+	</div>
+
+	<!-- Info Related to Add Points Tab -->
+	<div id ="Input_Points">
+		<h1> Input Points </h1>
+		<form id = "points">
+			<input type="number" id = "point input" value ="0">
+			<button id = "Point_Submit">Submit Points</button>
+		</form>
+		<p id="incorrect"></p>
+	</div>
+  
+  <!-- Info Related to Enter Password Tab -->
+  <div id ="sign_in">
+    <h1> Enter your password </h1>
+    <form id = "entered_pass">
+		<label for="pass"> Password: </label>
+		<input type="password" id="unique" name="returning_pass" required size = "15"
+		minlength = "8" maxlength = "15"><br><br>
+	   <input type="submit" value="Submit">
+	</form>
+	<p id="log"></p>
+  </div>
+
+  <!-- Info related to Create Password Tab -->
+  <div id="create_pass">
+	  <h1> Create your password </h1>
+	  <p>Passwords must be 8-15 characters in length</p>
+    <form id = "new_pass">
+		<label for="pass"> Password: </label>
+		<input type="password" id="creatingPass" name="fresh_pass" required size = "15"
+		minlength = "8" maxlength = "15"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+  </div>
+
+	<!-- Below Script statment allows for the use of popup.js -->
+	<script src="popup.js">
+	</script>
+  </body>
+</html>

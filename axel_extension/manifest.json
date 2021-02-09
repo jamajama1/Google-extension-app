@@ -1,0 +1,34 @@
+  {
+    "name": "Axel Extension",
+    "version": "1.0",
+    "description": "An extension for censorship",
+    "permissions": ["storage", "https://*/*", "http://*/*"],
+    "background":{
+      "scripts": ["background.js"]
+    },
+    "browser_action": {
+      "default_title": "Your friendly neighborhood censorship extension",
+      "default_popup": "popup.html",
+      "default_icon": {
+            "16": "images/test_image.png",
+            "32": "images/test_image32.png",
+            "48": "images/test_image48.png",
+            "128": "images/test_image128.png"
+          }
+    },
+    "icons": {
+      "16": "images/test_image.png",
+      "32": "images/test_image32.png",
+      "48": "images/test_image48.png",
+      "128": "images/test_image128.png"
+    },
+    "content_scripts":[
+      {
+        "matches": ["<all_urls>"],
+        "js": ["jquery-3.1.0.min.js", "util.js", "contentscript.js" ]
+      }
+    ],
+
+
+    "manifest_version": 2
+  }
